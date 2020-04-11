@@ -12,9 +12,7 @@ save_input = []
 first_iter = False
 
 def InputFirstNum():
-    global first_iter
     a = float(input("Input the first number: "))
-    first_iter = True
     return a
 
 def InputSecondNum():
@@ -50,9 +48,12 @@ def DoResult(user_input, user_select):
 while True:
     if not first_iter:
         save_input.append(InputFirstNum())
-    if len(save_input) == 2:
-        print("The first number is",save_input[0])
-    save_input.append(InputSecondNum())
+        save_input.append(InputSecondNum())
+        first_iter = True
+    else:
+        print("The first number is: ", save_input[0])
+        save_input[1] = InputSecondNum()
+    print(save_input)
     PrintAction()
     user_choice = ActionSelect()
     if ((user_choice == "+") or (user_choice == "-") or\
