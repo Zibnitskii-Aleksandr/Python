@@ -53,12 +53,9 @@ while True:
     else:
         print("The first number is: ", save_input[0])
         save_input[1] = InputSecondNum()
-    print(save_input)
     PrintAction()
     user_choice = ActionSelect()
-    if ((user_choice == "+") or (user_choice == "-") or\
-        (user_choice == "*") or (user_choice == "/")):
-
+    if ((user_choice == "+") or (user_choice == "-") or (user_choice == "*") or (user_choice == "/")):
         DoResult(save_input, user_choice)
     else:
         print("Thank's for your cooperation! Good bye")
