@@ -13,16 +13,17 @@ first_iter = False
 
 def InputFirstNum():
     global first_iter
-    a = input("Input the first number: ")
-    return float(a)
+    a = float(input("Input the first number: "))
+    first_iter = True
+    return a
 
 def InputSecondNum():
-    b = input("Input the second number: ")
-    return float(b)
+    b = float(input("Input the second number: "))
+    return b
 
-def PrintBanner():
+def PrintAction():
     print("-"*36)
-    print("Select a math action [ +, -, / , * ]")
+    print("Select a math action [ +, -, * , / ]")
     print("or input 'x' - for exit")
 
 def ActionSelect():
@@ -31,15 +32,32 @@ def ActionSelect():
 
 def DoResult(user_input, user_select):
     print("-"*36)
+    a = float(user_input[0])
+    b = float(user_input[1])
+    result = 0
+    if user_select == "+":
+        result = a + b
+    elif user_select == "-":
+        result = a - b
+    elif user_select == "*":
+        result = a * b
+    else:
+        result = a / b
+    print(a,user_select,b,"=",round(result, 2))
+    save_input[0] = round(result, 2)
+    print("-"*36,"\n")
 
 while True:
-    print(first_iter)
-    save_input.append(InputFirstNum())
-    print(first_iter)
-    save_input.append(InputSecondNum()) 
-    PrintBanner()
+    if not first_iter:
+        save_input.append(InputFirstNum())
+    if len(save_input) == 2:
+        print("The first number is",save_input[0])
+    save_input.append(InputSecondNum())
+    PrintAction()
     user_choice = ActionSelect()
-    if ((user_choice == "+") or (user_choice == "-")):
+    if ((user_choice == "+") or (user_choice == "-") or\
+        (user_choice == "*") or (user_choice == "/")):
+
         DoResult(save_input, user_choice)
     else:
         print("Thank's for your cooperation! Good bye")
