@@ -12,3 +12,30 @@
 #                 каждой ошибке у вас должен быть свой вывод по типу если /0, то написать что на 0 делить
 #                 нельзя и тому подобное. Переписать программу на классах (можно без try/except)
 
+iter = 0
+arrData = []
+arrResult = []
+
+class Calc():
+
+    def __init__(self):
+        pass
+
+    def doResult(self, data):
+        self.data = data
+        return result
+
+    def getInput(self, mySym):
+        global iter
+        self.mySym = mySym
+        if iter == 0:
+            iter += 1
+
+myCalc = Calc()
+myCalc.getInput(input("Введите значение (число или знак математической операции): "))
+
+
+
+
+
+
