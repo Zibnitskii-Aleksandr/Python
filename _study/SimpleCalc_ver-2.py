@@ -12,9 +12,12 @@
 #                 каждой ошибке у вас должен быть свой вывод по типу если /0, то написать что на 0 делить
 #                 нельзя и тому подобное. Переписать программу на классах (можно без try/except)
 
-iter = 0
 arrData = []
 arrResult = []
+
+def checkInput(sym):
+    result = type(sym)
+    print(result)
 
 class Calc():
 
@@ -26,13 +29,21 @@ class Calc():
         return result
 
     def getInput(self, mySym):
-        global iter
+        global arrData
         self.mySym = mySym
-        if iter == 0:
-            iter += 1
+        checkInput(mySym)
+        arrData.append(mySym)
 
 myCalc = Calc()
-myCalc.getInput(input("Введите значение (число или знак математической операции): "))
+iter = 0
+while len(arrData) != 3:
+    iter += 1
+    myCalc.getInput(input("Введите значение (число, знак операции, или віберите действие): "))
+    print(arrData)
+    print(iter)
+    print(len(arrData))
+
+
 
 
 
