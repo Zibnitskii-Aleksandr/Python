@@ -9,14 +9,14 @@ num = 0
 
 def checkNumber(num):
     if num == 0:
-        rezult = "Your input iz Zero"
-        return rezult
-    rezult = "Number " + str(num)
+        result = "Your input iz Zero"
+        return result
+    result = "Number " + str(num)
     if num % 2 == 0:
-        rezult = rezult + " is Even"
+        result +=" is Even"
     else:
-        rezult = rezult + " is Odd"
-    return rezult
+        result +=" is Odd"
+    return result
 
 print("~" * 45)
 while num != "***":
