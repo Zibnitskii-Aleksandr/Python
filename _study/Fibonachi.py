@@ -34,6 +34,7 @@ while count.isnumeric() != True:
             continue
         Fibo(fibArr, int(count))
         print(fibArr)
+        fibArr = [1, 1]
         print("~" * 60)
     else:
         print("Неверный ввод значения!")
